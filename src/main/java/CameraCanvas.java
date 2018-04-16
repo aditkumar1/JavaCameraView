@@ -1,7 +1,8 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class CameraCanvas extends Canvas {
+public class CameraCanvas extends JPanel {
 
     private BufferedImage img;
     @Override
@@ -9,8 +10,8 @@ public class CameraCanvas extends Canvas {
         return img == null ? new Dimension(200, 200) : new Dimension(img.getWidth(), img.getHeight());
     }
     @Override
-    public void paint(Graphics g) {
-        super.paint(g);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         if (img != null) {
             int x = (getWidth() - img.getWidth()) / 2;
             int y = (getHeight() - img.getHeight()) / 2;
